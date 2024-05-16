@@ -1,0 +1,157 @@
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 6;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, .2);
+}
+
+.modal-content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, .12), 0px 1px 1px rgba(0, 0, 0, .14), 0px 2px 1px rgba(0, 0, 0, .2);
+    border-radius: 4px;
+    animation: fadeInModal 500ms ease-in-out;
+    
+    h2{
+        text-align: center;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        font-size: 20px;
+        padding-bottom: 10px;
+    }
+
+    .close {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        border: 1px solid rgba(0, 0, 0, .1);
+        border-radius: 50%;
+        
+        &:hover,
+        &:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+            border: 1px solid black;
+            transition: all 500ms ease;
+        }
+    }
+}
+
+@keyframes fadeInModal {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+#order_form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input {
+	display: block;
+	padding: 0 20px 0 62px;
+	height: 50px;
+	border: 1px solid #dedede;
+	border-radius: 10px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	color: #777;
+	outline-color: #317ae8;
+}
+
+.input[name='email'] {
+    background: #f0f0f0 url(/modal/images/email.svg) 20px center no-repeat;
+}
+.input[name='first-name'] {
+	background: #f0f0f0 url(/modal/images/full-name.svg) 20px center no-repeat;
+}
+.input[name='country'] {
+    background: #f0f0f0 url(/modal/images/country.svg) 20px center no-repeat;
+}
+.input[name='city'] {
+    background: #f0f0f0 url(/modal/images/city.svg) 20px center no-repeat;
+}
+.input[name='street'] {
+    background: #f0f0f0 url(/modal/images/street.svg) 20px center no-repeat;
+}
+.input[name='zip'] {
+	background: #f0f0f0 url(/modal/images/zip.svg) 20px center no-repeat;
+}
+
+.input[name='phone'] {
+	background: #ebebeb url(/modal/images/phone.svg) 20px center no-repeat;
+}
+
+.button--modal {
+    display: block;
+    margin: 10px auto;
+    width: 340px;
+    height: 80px;
+    border: none;
+    border-radius: 40px;
+    background: #317ae8;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 80px;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 0 10px rgba(49, 122, 232, 0.3);
+    animation: shadowMove 2s infinite linear;
+
+    @media screen and (max-width: 400px) {
+        width: 290px;
+    }
+}
+
+@keyframes shadowMove {
+    0% {
+        box-shadow: 0 0 0 10px rgba(49, 122, 232, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 0 15px rgba(49, 122, 232, 0.3);
+    }
+    100% {
+        box-shadow: 0 0 0 10px rgba(49, 122, 232, 0.3);
+    }
+}
+
+
+.invalid-input {
+    border: 1px solid red;
+}
+
+.valid-input {
+    border: 1px solid green;
+}
